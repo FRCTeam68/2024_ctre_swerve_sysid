@@ -16,23 +16,51 @@ public class TunerConstants {
     // The steer motor uses any SwerveModule.SteerRequestType control request with the
     // output type specified by SwerveModuleConstants.SteerMotorClosedLoopOutput
      private static final Slot0Configs steerGains = new Slot0Configs()
+        // from CTRE example code  
+        // .withKP(100).withKI(0).withKD(0.05)
+        // .withKS(0).withKV(1.5).withKA(0);
+
+        // compbot
+             .withKP(40).withKI(0).withKD(0)
+            .withKS(0).withKV(0).withKA(0);
+
         // .withKP(1.7362).withKI(0).withKD(0)         did not work
         // .withKS(0.76146).withKV(1.164).withKA(0.65338);
 
-        // from sysid with 9DD4CCFE4E373553202020362B2911FF_2024-03-26_20-13-42.wpilog
-        .withKP(49.189).withKI(0).withKD(0)
-        .withKS(0.0).withKV(40).withKA(5.2176);
+        // try3, from sysid with 9DD4CCFE4E373553202020362B2911FF_2024-03-26_20-13-42.wpilog
+        // .withKP(49.189).withKI(0).withKD(0)
+        // .withKS(0.0).withKV(40).withKA(5.2176);
+
+        // try4, 
+        // .withKP(6.9823).withKI(0).withKD(5.0526)
+        // .withKS(0.0).withKV(6.7309).withKA(0);
+
+        // try5, 
+        // .withKP(66.283).withKI(0).withKD(1.1524)
+        // .withKS(0.0).withKV(0.055892).withKA(0.010854);
 
 
     // When using closed-loop control, the drive motor uses the control
     // output type specified by SwerveModuleConstants.DriveMotorClosedLoopOutput
     private static final Slot0Configs driveGains = new Slot0Configs()
-        //      .withKP(0.12781).withKI(0).withKD(0)    does not work
+        // from CTRE example code    
+        // .withKP(3).withKI(0).withKD(0)
+        // .withKS(0).withKV(0).withKA(0);
+
+        // compbot
+        .withKP(28).withKI(0).withKD(0)
+        .withKS(0).withKV(0).withKA(0); 
+
+        //     .withKP(0.12781).withKI(0).withKD(0)    does not work
         //         .withKS(0.10201).withKV(0.1137).withKA(0.029163); 
 
-        // from sysid with 9DD4CCFE4E373553202020362B2911FF_2024-03-26_20-13-42.wpilog
-        .withKP(0.12144).withKI(0).withKD(0)
-        .withKS(0.0058191).withKV(0.12657).withKA(0.027578); 
+        // try3, from sysid with 9DD4CCFE4E373553202020362B2911FF_2024-03-26_20-13-42.wpilog
+        // .withKP(0.12144).withKI(0).withKD(0)
+        // .withKS(0.0058191).withKV(0.12657).withKA(0.027578); 
+        
+        // try5, 
+        // .withKP(0.19149).withKI(0).withKD(0)
+        // .withKS(0.0058191).withKV(0.12657).withKA(0.027578); 
 
   /*  private static final Slot0Configs steerGains = new Slot0Configs()
         .withKP(100).withKI(0).withKD(0.05)
@@ -41,13 +69,6 @@ public class TunerConstants {
         .withKP(3).withKI(0).withKD(0)
         .withKS(0).withKV(0).withKA(0);  */
 
- /*   public static final Slot0Configs steerGains = new Slot0Configs()
-    .withKP(40).withKI(0).withKD(0)
-    .withKS(0).withKV(0).withKA(0);
-
-    public static final Slot0Configs driveGains = new Slot0Configs()
-    .withKP(28).withKI(0).withKD(0)
-    .withKS(0).withKV(0).withKA(0);   */
 
     // The closed-loop output type to use for the steer motors;
     // This affects the PID/FF gains for the steer motors
