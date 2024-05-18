@@ -79,19 +79,19 @@ public class TunerConstants {
 
     // The stator current at which the wheels start to slip;
     // This needs to be tuned to your individual robot
-    private static final double kSlipCurrentA = 200.0;
+    private static final double kSlipCurrentA = 80.0;
 
     // Theoretical free speed (m/s) at 12v applied output;
     // This needs to be tuned to your individual robot
-    public static final double kSpeedAt12VoltsMps = 4.175; // 13.7fps L1 Falcon
+    public static final double kSpeedAt12VoltsMps = 5.2;
 
     // Every 1 rotation of the azimuth results in kCoupleRatio drive motor turns;
     // This may need to be tuned to your individual robot
     private static final double kCoupleRatio = 3.5714285714285716;
 
     private static final double kDriveGearRatio = 5.88; 
-    private static final double kSteerGearRatio = 1;
-    private static final double kWheelRadiusInches = 2;
+    private static final double kSteerGearRatio = 12.8; //1;
+    private static final double kWheelRadiusInches = 1.95;  //2;
 
     private static final boolean kSteerMotorReversed = false;
     private static final boolean kInvertLeftSide = false;
@@ -163,7 +163,7 @@ public class TunerConstants {
     private static final int kBackRightDriveMotorId = 7;
     private static final int kBackRightSteerMotorId = 8;
     private static final int kBackRightEncoderId = 18;
-    private static final double kBackRightEncoderOffset = -0.049072265625;
+    private static final double kBackRightEncoderOffset = 0.04833984375; //-0.049072265625;
 
     private static final double kBackRightXPosInches = -9.75;
     private static final double kBackRightYPosInches = -11.25;
@@ -178,6 +178,6 @@ public class TunerConstants {
     private static final SwerveModuleConstants BackRight = ConstantCreator.createModuleConstants(
             kBackRightSteerMotorId, kBackRightDriveMotorId, kBackRightEncoderId, kBackRightEncoderOffset, Units.inchesToMeters(kBackRightXPosInches), Units.inchesToMeters(kBackRightYPosInches), kInvertRightSide);
 
-    public static final CommandSwerveDrivetrain DriveTrain = new CommandSwerveDrivetrain(DrivetrainConstants, 50, FrontLeft,
+    public static final CommandSwerveDrivetrain DriveTrain = new CommandSwerveDrivetrain(DrivetrainConstants, FrontLeft,
             FrontRight, BackLeft, BackRight);
 }
